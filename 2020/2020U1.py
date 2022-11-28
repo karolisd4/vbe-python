@@ -1,6 +1,6 @@
-def gauti_zydejimo_intervalus(dienos, didziausias_zydinciu_geliu_skaicius):
+def gauti_zydejimo_intervalus(dienos: dict, didziausias_zydinciu_geliu_skaicius: int) -> str:
     
-    def gauti_menesi_diena(dienos):
+    def gauti_menesi_diena(dienos: int) -> int:
         if dienos <= 31:
             menesis = 6
             diena = dienos
@@ -27,9 +27,9 @@ def gauti_zydejimo_intervalus(dienos, didziausias_zydinciu_geliu_skaicius):
     return pradzios_intervalas, pabaigos_intervalas
 
 
-def gauti_zydejimo_duomenis(pr_menesis, pr_diena, pab_menesis, pab_diena, dienos):
+def gauti_zydejimo_duomenis(pr_menesis: int, pr_diena: int, pab_menesis: int, pab_diena: int, dienos: dict) -> dict:
     if pr_menesis == 6 and pab_menesis == 6:
-        for i in range(pr_diena, pab_diena+1):    
+        for i in range(pr_diena, pab_diena+1):
             dienos[i] += 1
     elif pr_menesis == 6 and pab_menesis == 7:
         for i in range(pr_diena, 31+pab_diena+1):
@@ -75,7 +75,7 @@ def main():
 
     with open('./2020/U1rez.txt', 'w') as f:
         f.write(f'{str(didziausias_zydinciu_geliu_skaicius)}\n{pradzios_intervalas}\n{pabaigos_intervalas}')
- 
+
 
 if __name__ == '__main__':
     main()
