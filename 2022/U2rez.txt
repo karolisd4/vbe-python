@@ -1,0 +1,15 @@
+Atsilenkimai 4 56
+Rytas 1
+Diena 1
+Vakaras 2
+Atsispaudimai 3 50
+Rytas 1
+Diena 4
+Prisitraukimai 1 8
+Rytas 1
+Svarmenys 5 94
+Rytas 1
+Diena 3
+Vakaras 3
+Tempimas 2 18
+Vakaras 2
