@@ -50,7 +50,7 @@ def main():
 
     marsaeigis = Marsaeigis(int(pr_x), int(pr_y), int(pab_x), int(pab_y))
     for line in duomenys[3:]:
-        komandos = [komanda for komanda in list(line) if komanda != ' '][1:]
+        komandos = line.split(' ')[1:]
         for komanda in komandos:
             marsaeigis.judeti(int(komanda))
             if marsaeigis.pasiektas_tikslas():
