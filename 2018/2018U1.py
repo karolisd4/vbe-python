@@ -19,10 +19,9 @@ def main():
 
     with open('./2018/U1rez.txt', 'w') as f:
         maziausias_juost_sk = min(juosteliu_duom.values())
-        f.write(f'''{veliaveliu_skaicius}
-G = {juosteliu_duom['G'] - maziausias_juost_sk}
-Z = {juosteliu_duom['Z'] - maziausias_juost_sk}
-R = {juosteliu_duom['R'] - maziausias_juost_sk}''')
+        f.write(f'{veliaveliu_skaicius}\n')
+        for spalva in 'GZR':
+            f.write(f'{spalva} {juosteliu_duom[spalva] - maziausias_juost_sk}\n')
 
 
 main()
