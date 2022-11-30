@@ -42,7 +42,7 @@ class Marsaeigis():
         self.y = self.pr_y
 
 def main():
-    with open('2014/U2.txt', 'r') as f:
+    with open('2014/pagrindine/U2.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
     pr_x, pr_y = duomenys[0].split(' ')
     pab_x, pab_y = duomenys[1].split(' ')
@@ -57,7 +57,7 @@ def main():
                 break
         rezultatai.append(marsaeigis.gauti_rezultata())
 
-    with open('./2014/U2rez.txt', 'w') as f:
+    with open('./2014/pagrindine/U2rez.txt', 'w') as f:
         for rezultatas in rezultatai:
             f.write(rezultatas + '\n')
     
