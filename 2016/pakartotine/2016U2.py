@@ -11,10 +11,8 @@ def main():
     for line in duomenys:
         parkas = line[:20].strip()
         kiek_laiko = int(line[20:].strip())
-        if parkas in parku_duom.keys():
-            parku_duom[parkas] += kiek_laiko
-        else:
-            parku_duom[parkas] = kiek_laiko
+        parku_duom.setdefault(parkas, 0)
+        parku_duom[parkas] += kiek_laiko
 
     with open('./2016/2016U2rez.txt', 'w') as f:
         for parkas in parku_duom:
