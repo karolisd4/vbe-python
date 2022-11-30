@@ -1,5 +1,5 @@
 def main():
-    with open('./2022/U2.txt', 'r') as f:
+    with open('./2022/pagrindine/U2.txt', 'r') as f:
         duomenys = [duom.strip() for duom in f.readlines()]
         kiek_dienu_sportavo = int(duomenys[0])
         duomenys.pop(0)
@@ -42,7 +42,7 @@ def main():
             elif pratimas in dienos_duomenys and f'{pratimas} kiekis' in pratimai_duom.keys():
                 pratimai_duom[f'{pratimas} kiekis'] += 1
         
-    with open('./2022/U2rez.txt', 'w') as f:
+    with open('./2022/pagrindine/U2rez.txt', 'w') as f:
         for pratimas in sorted(pratimu_pavadinimai):
             f.write(f'{pratimas} {pratimai_duom[f"{pratimas} kiekis"]} {pratimai_duom[pratimas]}\n')
             for dienos_metas in dienos_metai:

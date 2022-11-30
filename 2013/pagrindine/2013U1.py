@@ -1,5 +1,5 @@
 def main():
-    with open('./2013/2013U1.txt', 'r', encoding='UTF-8') as f:
+    with open('./2013/pagrindine/U1.txt', 'r', encoding='UTF-8') as f:
         lines = [line.strip() for line in f.readlines()]
     kilometru_limitas = lines[0].split(' ')[1]
     lines.pop(0)
@@ -15,7 +15,7 @@ def main():
             break
         nuvaziuoti_km += x +  y
 
-    with open('./2013/2013U1rez.txt', 'w', encoding='UTF-8') as f:
+    with open('./2013/pagrindine/U1rez.txt', 'w', encoding='UTF-8') as f:
         f.write(f'{str(i)} {str(nuvaziuoti_km)} {pavadinimai[i - 1]}')
 
 

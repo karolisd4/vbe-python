@@ -1,5 +1,5 @@
 def main():
-    with open('./2014/U1.txt', 'r') as f:
+    with open('./2014/pagrindine/U1.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
         skyriu_sk = int(duomenys[0])
         duomenys.pop(0)
@@ -56,7 +56,7 @@ def main():
 
     laimetojas = [value for value in skyrius if skyrius[value]==max(skyrius.values())][0]
 
-    with open('./2014/U1rez.txt', 'w') as f:
+    with open('./2014/pagrindine/U1rez.txt', 'w') as f:
         f.write(f'{str(pirmu_balai)} {str(antru_balai)} {str(treciu_balai)}\n')
         f.write(f'{skyrius[1]} {skyrius[2]} {skyrius[3]}\n{laimetojas}')
 

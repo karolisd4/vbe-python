@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 def main():
-    with open('./2018/U2.txt', 'r') as f:
+    with open('./2018/pagrindine/U2.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
         slidininku_sk = int(duomenys[0])
         duomenys.pop(0)
@@ -37,7 +37,7 @@ def main():
             sekunde = str(praejes_laikas.seconds - int(minute) * 60)
             slidininku_rez_duom[vardas] = (minute, sekunde)
 
-    with open('./2018/U2rez.txt', 'w') as f:
+    with open('./2018/pagrindine/U2rez.txt', 'w') as f:
         for laikas, vardas in sorted((v, k) for k, v in slidininku_rez_duom.items()):
             f.write(f'{vardas:<20} {laikas[0]} {laikas[1]}\n')
         

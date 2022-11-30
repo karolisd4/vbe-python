@@ -1,7 +1,7 @@
 from math import floor
 
 def main():
-    with open('./2018/U1.txt', 'r') as f:
+    with open('./2018/pagrindine/U1.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
         kruveliu_skaicius = int(duomenys[0])
         duomenys.pop(0)
@@ -17,7 +17,7 @@ def main():
             juosteliu_duom[spalva] += int(juosteliu_kiekis)
     veliaveliu_skaicius = str(floor(min(juosteliu_duom.values()) / 2))
 
-    with open('./2018/U1rez.txt', 'w') as f:
+    with open('./2018/pagrindine/U1rez.txt', 'w') as f:
         maziausias_juost_sk = min(juosteliu_duom.values())
         f.write(f'{veliaveliu_skaicius}\n')
         for spalva in 'GZR':

@@ -51,7 +51,7 @@ def gauti_zydejimo_duomenis(pr_menesis: int, pr_diena: int, pab_menesis: int, pa
 
 
 def main():
-    with open('./2020/U1.txt', 'r') as f:
+    with open('./2020/pagrindine/U1.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
         geliu_sk = int(duomenys[0])
         duomenys.pop(0)
@@ -73,7 +73,7 @@ def main():
     didziausias_zydinciu_geliu_skaicius = max(dienos.values())
     pradzios_intervalas, pabaigos_intervalas = gauti_zydejimo_intervalus(dienos, didziausias_zydinciu_geliu_skaicius)
 
-    with open('./2020/U1rez.txt', 'w') as f:
+    with open('./2020/pagrindine/U1rez.txt', 'w') as f:
         f.write(f'{str(didziausias_zydinciu_geliu_skaicius)}\n{pradzios_intervalas}\n{pabaigos_intervalas}')
 
 

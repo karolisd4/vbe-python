@@ -1,5 +1,5 @@
 def main():
-    with open('./2020/U2.txt', 'r') as f:
+    with open('./2020/pagrindine/U2.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
         zveju_sk = int(duomenys[0])
         duomenys.pop(0)
@@ -46,7 +46,7 @@ def main():
         if v not in zuvu_svoriai:
             zuvu_svoriai[v] = 0
 
-    with open('./2020/U2rez.txt', 'w') as f:
+    with open('./2020/pagrindine/U2rez.txt', 'w') as f:
         f.write('Dalyviai\n')
         for v in rezultatai:
             f.write(f'{v} {rezultatai[v]}\n')

@@ -2,7 +2,7 @@ def main():
     sunkiausia_kuprine = 0
     kiek_lengvesniu_kupriniu = 0
 
-    with open('./2016/2016U1.txt', 'r') as f:
+    with open('./2016/pagrindine/2016U1.txt', 'r') as f:
         duom = f.readlines()[1:]
         for kuprine in duom:
             kuprine = int(kuprine.strip())
