@@ -1,5 +1,5 @@
 def main():
-    with open('./2013/2013U2.txt', 'r') as f:
+    with open('./2013/pagrindine/U2.txt', 'r') as f:
         lines = f.readlines()
         lines = [line.strip() for line in lines]
     lines.pop(0)
@@ -36,7 +36,7 @@ def main():
         gyventoju_info.append(value[0])
         gyventoju_info = sorted(gyventoju_info)
 
-    with open('./2013/2013U2rez.txt', 'w') as f:
+    with open('./2013/pagrindine/U2rez.txt', 'w') as f:
         f.write(f'{apskriciu_sk}\n')
         for gyventoju_sk in gyventoju_info:
             apskritis = [i for i in apskriciu_duom if apskriciu_duom[i][0]==gyventoju_sk][0]
