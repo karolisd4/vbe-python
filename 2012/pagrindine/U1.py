@@ -1,6 +1,6 @@
 def main():
     # Perskaitau duomenis
-    with open('U1.txt', 'r') as f:
+    with open('./2012/pagrindine/U1.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()]
         kiek_zaid = duomenys[0] 
         duomenys.pop(0)
@@ -40,7 +40,7 @@ def main():
         elif v[0] == daugiausia_laiko_zaide:
             zaides_zaidejas = (k, daugiausia_laiko_zaide)   
 
-    with open('U1rez.txt', 'w') as f:
+    with open('./2012/pagrindine/U1rez.txt', 'w') as f:
         f.write(' '.join(startinis_penketukas) + '\n')
         f.write(f'{zaides_zaidejas[0]} {zaides_zaidejas[1]}\n')
         f.write(f'{sedejes_zaidejas[0]} {abs(sedejes_zaidejas[1])}')
