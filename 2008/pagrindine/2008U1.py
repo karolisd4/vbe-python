@@ -14,7 +14,7 @@ def marsrutu_nr_didejimo_tvarka(marsrutai):
 
 
 def skaityti_duomenis():
-    with open('./2008/pagrindine/2008U1.txt', 'r') as f:
+    with open('./2008/pagrindine/U1.txt', 'r') as f:
         return [line.strip() for line in f.readlines()]
 
 
