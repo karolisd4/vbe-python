@@ -14,7 +14,7 @@ def marsrutu_nr_didejimo_tvarka(marsrutai):
 
 
 def skaityti_duomenis():
-    with open('2008U1.txt', 'r') as f:
+    with open('./2008/pagrindine/2008U1.txt', 'r') as f:
         return [line.strip() for line in f.readlines()]
 
 
@@ -61,7 +61,7 @@ def main():
         max_marsrutas = 'NE'
 
     # Surasomi rezultatai, kiekviena elementa masyvuose paverciant i string tipa
-    with open('U1rez.txt', 'w') as f:
+    with open('./2008/pagrindine/U1rez.txt', 'w') as f:
         f.write(' '.join([str(marsruto_nr) for marsruto_nr in rusiuoti_marsrutu_nr]) + '\n')
         f.write(' '.join([str(ilipe_kel) for ilipe_kel in ilipe]) + '\n')
         f.write(' '.join([str(islipe_kel) for islipe_kel in islipe]) + '\n')
