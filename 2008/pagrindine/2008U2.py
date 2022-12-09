@@ -58,7 +58,7 @@ def main():
     
     marsrutai, ilgiausia_stotele = ilgiausias_marsrutas(marsrutai)
 
-    # Surasomi rezultatai, kurios gaunama is funkcijos i rezultatu faila
+    # Surasomi rezultatai, kuriuos gaunama is funkcijos i rezultatu faila
     with open('./2008/pagrindine/U2rez.txt', 'w') as f:
         f.write(ilgiausia_stotele + '\n')
         for stotele in marsrutai.keys():
