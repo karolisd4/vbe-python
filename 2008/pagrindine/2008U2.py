@@ -33,7 +33,7 @@ def ilgiausias_marsrutas(marsrutai) -> tuple[dict, str]:
         if min(ilgiausi_marsrutai) not in marsruto_numeriai:
             stoteles_istrinimui.append(stotele)
 
-    # Visos stoteles, kurios buvo sudetos i masyva, istrinamos is pagrindinio dictionary
+    # Visos stoteles, kurios buvo sudetos i masyva istrinamos is pagrindinio dictionary
     for stotele in stoteles_istrinimui:
         marsrutai.pop(stotele)
     
