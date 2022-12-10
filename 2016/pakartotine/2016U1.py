@@ -27,7 +27,6 @@ class Uzduotis():
         '''Nusistatomi indexai, pagal kuriuos bus skaitomi ugiai.
         Skaitomi ugiai, jei jie didesni uz klases vidurki, prie kintamojo pridedamas vienetas'''
 
-        self.nustatyti_indexus()
         for ugis in self.gauti_ugius():
             if ugis > self.vidurkis:
                 self.aukstesni_uz_vidurki += 1
