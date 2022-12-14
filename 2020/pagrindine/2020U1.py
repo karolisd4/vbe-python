@@ -58,9 +58,7 @@ def main():
     if geliu_sk < 1 or geliu_sk > 30:
         return
 
-    dienos = {}
-    for i in range(1, 93):
-        dienos[i] = 0
+    dienos = {diena: 0 for diena in range(0, 93)}
 
     for line in duomenys:
         pr_menesis = int(line[5:6])
