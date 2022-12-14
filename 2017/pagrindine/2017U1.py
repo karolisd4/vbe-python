@@ -19,6 +19,7 @@ def nustatyti(pirmas, antras):
         pirmas_skaitmuo = pirmas
     if antras in range(10):
         antras_skaitmuo = antras
+        
     return str(pirmas_skaitmuo), str(antras_skaitmuo)
 
 
@@ -26,7 +27,7 @@ def gauti_sesioliktaini_skaiciu(rgb):
     res = ''
     rgb = [int(sk) for sk in rgb.split(' ')]
 
-    for i, spalva in enumerate(rgb):
+    for spalva in rgb:
         pirmas_skaitmuo, antras_skaitmuo = nustatyti(spalva // 16, spalva % 16)
         res += pirmas_skaitmuo + antras_skaitmuo
     
