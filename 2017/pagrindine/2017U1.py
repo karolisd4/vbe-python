@@ -52,7 +52,7 @@ def main():
     assert 1<=ilgis<=10000
     assert 1<=plotis<=10000
 
-    # Sukuriami tusti masyvai, kuriuose bus laikomi rezultatai
+    # Sukuriamas tuscias masyvas bei tuscias string rezultatams saugoti
     skaiciai = []
     rezultatas = ''
 
