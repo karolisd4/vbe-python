@@ -56,7 +56,7 @@ def main():
     skaiciai = []
     rezultatas = ''
 
-    # Einama per visus duotus skaicius, jei paverciami i sesioliktainius ir sudedami i masyva
+    # Einama per visus duotus skaicius, jie paverciami i sesioliktainius ir sudedami i masyva
     for rgb in duomenys:
         sesioliktainis = gauti_sesioliktaini_skaiciu(rgb)
         skaiciai.append(sesioliktainis)
