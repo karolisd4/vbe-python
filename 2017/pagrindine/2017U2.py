@@ -67,10 +67,8 @@ def main():
         x, y = line[:2]
         dx, dy = line[2:4]
         rgb_color = line[4:]
-
-        assertion(x, y, dx, dy)  # Tikrinama, ar tinkamas duotu skaiciu kiekis pagal salyga
-
         
+        assertion(x, y, dx, dy)  # Tikrinama, ar tinkamas duotu skaiciu kiekis pagal salyga
         rect = Rectangle(x, y, dx, dy, rgb_color, canvas)  # Sukuriamas staciakampio objektas, jam duodamas ekrano objektas bei pradzios koordinates, ilgis, plotis ir spalva
         rect.draw()  # Staciakampis uzpiesiamas ant ekrano
     
