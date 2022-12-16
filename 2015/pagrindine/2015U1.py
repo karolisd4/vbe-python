@@ -5,7 +5,7 @@ def get_eaten_plums_by_each_student(eaten_girl_plums):
         remaining_plums = 10 - eaten_plum   # Einama per kiekviena suvalgytu slyvu skaiciu, ir skaiciuojama, kiek slyvu liko dubenelyje
         eat_count[i] += eaten_plum  # Prie suvalgytu slyvu masyvo pridedama tiek slyvu, kiek buvo suvalgyta
         for j in range(remaining_plums):
-            eat_count[i+j+1] += 1  # Kiti mokiniai suvalgo po viena slyva tiek kartu, kiek yra like slyvu
+            eat_count[i+j+1] += 1  # Po viena slyva suvalgo tiek mokiniu is eiles, kiek yra like slyvu
 
     return [str(count) for count in eat_count]  # Grazinamas masyvas, pavertus kiekviena elementa i string tipa
 
