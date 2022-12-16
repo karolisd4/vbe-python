@@ -40,14 +40,14 @@ class Canvas():
                 self.screen.setdefault((screen_x, screen_y), [255, 255, 255])
 
 
-def assertion(x, y, width, lenght):
+def assertion(x, y, dx, dy):
     '''Tikrinama ar kiekvienas duotas skaicius atitinka salygos ribojimus'''
     assert 0<=x<=99
     assert 0<=y<=99
-    assert 1<=width<=20
-    assert 1<=lenght<=20
-    assert x+lenght<=100
-    assert y+width<=100
+    assert 1<=dx<=20
+    assert 1<=dy<=20
+    assert x+dx<=100
+    assert y+dy<=100
 
 
 def main():
