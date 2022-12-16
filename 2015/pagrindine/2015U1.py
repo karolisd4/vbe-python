@@ -15,7 +15,7 @@ def main():
     # Tuo paciu metu atidaromi ir duomenu, ir rezultatu failai, perskaityti duomenys is karto apdorojami funkcijos ir irasomi i rezultatu faila
     with open('./2015/pagrindine/U1.txt', 'r') as fr, \
         open('./2015/pagrindine/U1rez.txt', 'w') as fw:
-        eaten_girl_plums = [int(num) for num in fr.readline().split(' ')]  # Kiekvienas skaitmuo paverciamas i integer tipa
+        eaten_girl_plums = [int(num.strip()) for num in fr.readline().split(' ')]  # Kiekvienas skaitmuo paverciamas i integer tipa
         fw.write(' '.join(get_eaten_plums_by_each_student(eaten_girl_plums)))   # Masyvas paverciamas i string, atskirta tarpais ir irasomas
 
 
