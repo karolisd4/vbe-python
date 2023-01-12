@@ -50,7 +50,7 @@ class Solution():
             if res[0] == worst_participant:
                 self.result.remove(res)
         
-        with open(f'{self.filename}U1rez.txt', 'w') as f:
+        with open(f'{self.path}U1rez.txt', 'w') as f:
             f.write(f'{str(most_points)}\n')
             for res in self.result:
                 f.write(f'{res[0]:<10} {str(res[1])} {str(res[2])}\n')  # Duomenys surasomi i rezultatu faila, vardui suteikiant 10 simboliu.
