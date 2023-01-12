@@ -54,7 +54,6 @@ class Solution():
             f.write(f'{str(most_points)}\n')
             for res in self.result:
                 f.write(f'{res[0]:<10} {str(res[1])} {str(res[2])}\n')  # Duomenys surasomi i rezultatu faila, vardui suteikiant 10 simboliu.
-            
     
     def calculate(self, time_taken: list[int]) -> tuple[list[int], int]:
         '''Funkcija skaiciuoja dalyvio gautus taskus ir vis sumuoja sugaista dalyvio laika. Jeigu sugaista 0 laiko, uzduotis praleidziama.
