@@ -1,13 +1,4 @@
 def exchange(student_money: int, denominations: list[int]) -> dict:
-    received = {}
-    for denomination in denominations:
-        receive = student_money // denomination
-        student_money -= receive * denomination
-        received.setdefault(denomination, receive)
-    return received
-
-
-def main():def exchange(student_money: int, denominations: list[int]) -> dict:
     # Sukuriamas tuščias žodynas, kuriame bus saugoma nominalų informacija. {nominalas: kiekis}
     received = {}
     # Einama per kiekvieną nominalą ir naudojamas // dalybos operatorius, kad gauti skaičių be liekanos. Taip randamas maksimalus reikiamų monetų kiekis.
