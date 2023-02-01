@@ -8,7 +8,7 @@ def exchange(student_money: int, denominations: list[int]) -> dict:
 
 
 def main():
-    with open('2009U1.txt', 'r') as f:
+    with open('./2009/pagrindine/2009U1.txt', 'r') as f:
         lines = [line.strip() for line in f.readlines()]
 
     gilija_student = 0
