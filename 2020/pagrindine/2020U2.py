@@ -1,74 +1,68 @@
+def sort_data(results: dict) -> dict:
+    '''Rikiuoja zodyna abeceliskai ir pagal skaicius mazejancia tvarka.'''
+    return sorted(results.items(), reverse=True, key=lambda x: x[::-1])
+
+
 def main():
     with open('./2020/pagrindine/U2.txt', 'r') as f:
-        duomenys = [line.strip() for line in f.readlines()]
-        zveju_sk = int(duomenys[0])
-        duomenys.pop(0)
+        data = [line.strip() for line in f.readlines()] # Perskaitomi duomenys, sudedami i masyva.
+    fishermen_count = int(data[0])  # Gaunamas zveju skaicius, tikrinama, ar atitinka salyga.
+    assert 1 <= fishermen_count <= 30
 
-    rezultatai = {}
-    vertinamos_zuvys = {}
-    zuvu_svoriai = {}
-    duombazes = []
+    # Sukuriami tusti zodynai ir kintamasis visai informacijai saugoti.
+    rating_index = 0
+    participants = {}
+    ratings = {}
+    fish_dict = {}
+    results = {}
+
+    # Einama per duomenu masyva kartu su indeksu.
+    for i, line in enumerate(data):
+        if i == 0:  # Pacia pirma eilute visad praleidziama - ji yra zveju skaicius
+            continue
+        if len(line) == 1 or len(line) == 2:    # Jeigu eilutes ilgis tik 1 ar 2 simboliai, prasideda vertinamu zuvu sarasas.
+            rating_index = i    # Issaugomas indeksas, nuo kurio prasideda vertinamu zuvu sarasas.
+            break
+        name = line[:20].strip()    # Randamas vardas, zuvu skaicius
+        fish_count = int(line[20:].strip())
+        if fish_count > 30: continue    # Jeigu zuvu skaicius yra daugiau nei 30, t.y randama mase, ciklas nutraukiamas ir einama tolyn.
+        else: participants.setdefault(name, []) # Jeigu zuvu skaicius maziau nei 30, zinoma, kad tai dalyvis ir jis idedamas i masyva.
+        for fish in data[i+1:i+1+fish_count]: # Einama per zmogaus zuvu sarasa su duotu zuvu skaicium.
+            fish_name = fish[:20].strip()
+            fish_mass = int(fish[20:].strip())
+            fish_dict.setdefault(fish_name, fish_mass)  # I zuvu masyva sudedamos zuvys ir sumuojama ju mase.
+            participants[name].append((fish_name, fish_mass))   # Atitinkamam dalyviui sudedamos jo zuvys ir mases.
+
+    # Einama per vertinamas zuvis, jos sudedamos i zodyna.
+    for rating in data[rating_index+1:]:
+        fish_name = rating[:20].strip()
+        points = int(rating[20:].strip())
+        ratings.setdefault(fish_name, points)
+        fish_dict.setdefault(fish_name, 0)  # Jeigu zuvis anksciau buvo nepagauta, jos mase nustatoma i 0.
     
-    if zveju_sk < 1 or zveju_sk > 30:
-        return
-    for i in range(zveju_sk):
-        duombazes.append(ieskoti(duomenys))
-    duomenys.pop(0)
-    for line in duomenys:
-        zuvis = line[:20].strip()
-        taskai = int(line[20:].strip())
-        vertinamos_zuvys[zuvis] = taskai
-    for i in range(zveju_sk):
-        taskai = 0
-        duom = duombazes[i]
-        vardas = list(duom.keys())[0]
-        zuvys = duom.values()
-        for zuvis in zuvys:
-            for zuvis2 in zuvis:
-                zuvies_pav = zuvis2[0]
-                mase = int(zuvis2[1])
-                if mase > 200:
-                    taskai += 30
-                    taskai += vertinamos_zuvys[zuvies_pav]
-                    rezultatai[vardas] = taskai
-                else:
-                    taskai += 10
-                    taskai += vertinamos_zuvys[zuvies_pav]
-                    rezultatai[vardas] = taskai
-    for i in duombazes:
-        for values in i.values():
-            for zuvyte in values:
-                if zuvyte[0] not in zuvu_svoriai.keys(): 
-                    zuvu_svoriai[zuvyte[0]] = int(zuvyte[1])
-                else:
-                    zuvu_svoriai[zuvyte[0]] += int(zuvyte[1])
-    for v in vertinamos_zuvys:
-        if v not in zuvu_svoriai:
-            zuvu_svoriai[v] = 0
-
+    # Einama per dalyvius ir ju zuvis, skaiciuojami taskai pagal salyga ir vertinamu zuvu zodyna.
+    for name, fish_info in participants.items():
+        results.setdefault(name, 0)
+        for fish in fish_info:
+            if fish[1] < 200:
+                results[name] += 10
+            elif fish[1] > 200:
+                results[name] += 30
+            results[name] += ratings[fish[0]]
+    
+    # Surikiuojami rezultatai ir zuvu informacija, naudojant funkcija.
+    results = sort_data(results)
+    fish_dict = sort_data(fish_dict)
+    
+    # Surasomi rezultatai.
     with open('./2020/pagrindine/U2rez.txt', 'w') as f:
         f.write('Dalyviai\n')
-        for v in rezultatai:
-            f.write(f'{v} {rezultatai[v]}\n')
+        for participant in results:
+            f.write(f'{participant[0]:<20} {participant[1]}\n') # Pavadinimams duodama 20 simboliu.
         f.write('Laimikis\n')
-        for v in zuvu_svoriai:
-            f.write(f'{v} {zuvu_svoriai[v]}\n')
+        for fish in fish_dict:
+            f.write(f'{fish[0]:<20} {fish[1]}\n')
 
-        
-def ieskoti(duomenys):
-    zuvu_duom = {}
-    zuvu_info = []
-    vardas = duomenys[0][:20].strip()
-    sugautos_zuvys = int(duomenys[0][20:].strip())
-    duomenys.pop(0)
-    zuvys = duomenys[0:sugautos_zuvys]
-    for zuvis in zuvys:
-        duomenys.pop(0)
-        zuvies_pav = zuvis[:20].strip()
-        zuvies_svoris = zuvis[20:].strip()
-        zuvu_info.append((zuvies_pav, zuvies_svoris))
-    zuvu_duom[vardas] = zuvu_info
-    return zuvu_duom
-
-
-main()
+# Pagrindine funkcija
+if __name__ == '__main__':
+    main()
