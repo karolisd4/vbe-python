@@ -1,6 +1,6 @@
 def sort_data(results: dict) -> dict:
     '''Rikiuoja zodyna abeceliskai ir pagal skaicius mazejancia tvarka.'''
-    return sorted(results.items(), reverse=True, key=lambda x: x[::-1])
+    return sorted(results.items(), key=lambda x: (-x[1], x[0]))
 
 
 def main():
