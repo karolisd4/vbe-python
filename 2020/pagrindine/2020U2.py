@@ -1,6 +1,6 @@
 def sort_data(results: dict) -> dict:
     '''Rikiuoja zodyna abeceliskai ir pagal skaicius mazejancia tvarka.'''
-    return sorted(results.items(), key=lambda x: (-x[1], x[0]))
+    return sorted(results.items(), key=lambda x: (-x[1], x[0])) # Rikiuojamas skaicius paverciamas negatyviu, kad butu mazejimo tvarka.
 
 
 def main():
