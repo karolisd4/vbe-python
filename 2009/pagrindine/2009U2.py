@@ -7,7 +7,7 @@ class Participant():
         self.time = time
 
 
-def write_result(result):
+def write_result(result: list):
     with open('./2009/pagrindine/U2rez.txt', 'w') as f:
         for participant in result:
             f.write(f'{participant.name} {participant.time.minute} {participant.time.second}\n')
