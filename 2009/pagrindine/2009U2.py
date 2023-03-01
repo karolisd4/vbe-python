@@ -50,7 +50,7 @@ def main():
             results.append(chosen)
             groups[i-1].remove(chosen)
 
-    results = sorted(results, key=lambda person: person.time)
+    results = sorted(results, key=lambda participant: participant.time)
     write_result(results)
         
 
