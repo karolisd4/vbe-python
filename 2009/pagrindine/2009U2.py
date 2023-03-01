@@ -9,8 +9,8 @@ class Participant():
 
 def write_result(result):
     with open('./2009/pagrindine/U2rez.txt', 'w') as f:
-        for r in result:
-            f.write(f'{r.name} {r.time.minute} {r.time.second}\n')
+        for participant in result:
+            f.write(f'{participant.name} {participant.time.minute} {participant.time.second}\n')
 
 
 def main():
