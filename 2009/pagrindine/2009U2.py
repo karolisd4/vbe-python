@@ -7,13 +7,13 @@ class Participant():
         self.time = time
 
 def write_result(result):
-    with open('U2rez.txt', 'w') as f:
+    with open('./2009/pagrindine/U2rez.txt', 'w') as f:
         for r in result:
             f.write(f'{r.name} {r.time.minute} {r.time.second}\n')
 
 
 def main():
-    with open('U2.txt', 'r') as f:
+    with open('./2009/pagrindine/U2.txt', 'r') as f:
         lines = [line.strip() for line in f.readlines()]
     group_count = int(lines[0])
     lines.pop(0)
