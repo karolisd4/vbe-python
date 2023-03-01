@@ -6,6 +6,7 @@ class Participant():
         self.group = group
         self.time = time
 
+
 def write_result(result):
     with open('./2009/pagrindine/U2rez.txt', 'w') as f:
         for r in result:
