@@ -11,7 +11,7 @@ def exchange(student_money: int, denominations: list[int]) -> dict:
 
 
 def main():
-    with open('2009U1.txt', 'r') as f:
+    with open('./2009/pagrindine/U1.txt', 'r') as f:
         lines = [line.strip() for line in f.readlines()] # Perskaitomi duomenys iš duomenų failo, pašalinant nereikalingus tarpus
 
     # Sukuriami du tušti kintamieji, kuriuose saugoma mokinių pinigų suma
@@ -34,7 +34,7 @@ def main():
     gilija_coin_amount = sum(gilija_received.values())
     eglija_coin_amount = sum(eglija_received.values())
 
-    with open('./20019/pagrindine/2009U1rez.txt', 'w') as f:
+    with open('./2009/pagrindine/U1rez.txt', 'w') as f:
         # Einama per abiejų šalių mokinių gautas monetas ir jas surašoma į rezultatų failą
         for denomination, amount in gilija_received.items():
             f.write(f'{str(denomination)} {amount}\n')
