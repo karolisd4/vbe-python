@@ -18,8 +18,8 @@ def read_data() -> list:
     return lines
 
 
-def sort_data(data: list):
-    '''Rikiuojama masyvą mažėjančia tvarka pagal dalyvių tašku sumos skaičių.'''
+def sort_data(data: list) -> list:
+    '''Rikiuojama masyvą mažėjančia tvarka pagal dalyvių taškų sumos skaičių.'''
     return sorted(data, reverse=True, key=lambda participant: participant.total_pts)
 
 
