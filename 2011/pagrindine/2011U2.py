@@ -5,7 +5,7 @@ class Participant():
         self.name = name
         self.total_pts = 0
     
-    def get_point_sum(self, points: list) -> None:
+    def update_point_sum(self, points: list) -> None:
         '''Pagal sąlygą iš taškų atimamas vienas mažiausias ir vienas didžiausias balas, o tada randama taškų suma.'''
         points.remove(max(points))
         points.remove(min(points))
@@ -43,8 +43,8 @@ def main():
             artistry_pts = [int(point) for point in lines[i+2:i+3][0].split(' ')]
             # Sukuriamas dalyvio objektas, naudojantis funkcija suskaičiuojamos jų taškų sumos.
             participant = Participant(name)
-            participant.get_point_sum(technic_pts)
-            participant.get_point_sum(artistry_pts)
+            participant.update_point_sum(technic_pts)
+            participant.update_point_sum(artistry_pts)
             # Į dalyvių masyvą sudedama dalyvių objektai.
             participants.append(participant)
 
