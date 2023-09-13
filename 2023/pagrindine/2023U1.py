@@ -1,5 +1,5 @@
 def read():
-    with open('2023/U1.txt', 'r') as f:
+    with open('2023/pagrindine/U1.txt', 'r') as f:
         duomenys = [line.strip() for line in f.readlines()] # Perskaitomi duomenys, pašalinant nereikalingus tarpus, jeigu tokių yra.
     mok_sk = int(duomenys[0])   # Randamas ir tikrinamas mokinių skaičius pagal sąlygą, jis pašalinamas iš duomenų sąrašo, nes yra nereikalingas.
     assert 10 <= mok_sk <= 50
@@ -33,7 +33,7 @@ def main():
         except KeyError: pass   # Jeigu kategorija nesikartoja, gaunama KeyError, šią klaidą praleidžiama ir įvedamas naujas key su value į žodyną.
         mokiniai.setdefault(kategorija, [1, zingsniu_suma])
         
-    with open('2023/U1rez.txt', 'w') as f:  # Sukuriamas rezultatų failas ir jame surašomi gauti žodyno duomenys.
+    with open('2023/pagrindine/U1rez.txt', 'w') as f:  # Sukuriamas rezultatų failas ir jame surašomi gauti žodyno duomenys.
         for kategorija, v in mokiniai.items():
             kiek_mokiniu = v[0]
             atstumas = v[1]
